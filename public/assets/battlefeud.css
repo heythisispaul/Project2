@@ -1,0 +1,32 @@
+.btn {
+	width: 75%;
+	margin: 15px auto;
+}
+
+.jumbotron {
+	background-color: #428bca;
+	color: white;
+}
+
+.unanswered {
+	color: purple;
+	visibility: hidden;
+}
+
+#questionNumber {
+	display: inline;
+}
+
+#mainDisplay {
+	margin-top: 3%;
+}
+
+#strike {
+	color: red;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 6em;
+	float: left;
+	margin-left: 15%;
+	
+}
