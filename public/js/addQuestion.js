@@ -31,7 +31,7 @@ $(document).ready(function() {
     event.preventDefault();
     // Wont submit the question if we are missing a1...a5, ca or a title
     if (!titleInput.val().trim() || !a1_Input.val().trim() || !a2_Input.val().trim() || !a3_Input.val().trim() || !a4_Input.val().trim() || !a5_Input.val().trim() || 
-      !ca_Input.val().trim() || !questCategorySelect.val().trim()) {
+       !questCategorySelect.val().trim()) {
       return;
     }
     // Constructing a newPost object to hand to the database
@@ -42,7 +42,6 @@ $(document).ready(function() {
       choiceThree: a3_Input.val().trim(),
       choiceFour: a4_Input.val().trim(), 
       choiceFive: a5_Input.val().trim(),
-      correctAnswer: ca_Input.val(),
       question_category: questCategorySelect.val(),
       disclaimer: disclaimer_Input.val().trim()
     };
@@ -78,7 +77,6 @@ $(document).ready(function() {
         a3_Input.val(data.choiceThree);
         a4_Input.val(data.choiceFour);
         a5_Input.val(data.choiceFive);
-        ca_Input.val(data.correctAnswer);
         questCategorySelect.val(data.question_category);
         disclaimer_Input.val(data.disclaimer);
         // If we have a question with this id, set a flag for us to know to update the question

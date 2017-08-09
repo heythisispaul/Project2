@@ -78,4 +78,15 @@ module.exports = function(app) {
       res.json(dbQuestions);
     });
   });
+
+  //Route to pull s
+  app.get("/api/questions/:id", function(req, res) {
+    db.Questions.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbQuestions) {
+      res.json(dbQuestions);
+    })
+  })
 };

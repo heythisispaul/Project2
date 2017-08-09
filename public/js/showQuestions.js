@@ -15,7 +15,7 @@ $(document).ready(function() {
     if (categoryString) {
       categoryString = "/category/" + categoryString;
     }
-    $.get("/api/questions" + categoryString, function(data) {
+    $.get("/api/questions/" + categoryString, function(data) {
       console.log("Questions", data);
       questions = data;
       if (!questions || !questions.length) {
@@ -87,8 +87,6 @@ $(document).ready(function() {
     newQuest_a4.text(questions.choiceFour);
     var newQuest_a5 = $("<p>");
     newQuest_a5.text(questions.choiceFive);
-    var newQuest_ca = $("<p>");
-    newQuest_ca.text(questions.correctAnswer);
     var newQuest_score = $("<p>");
     newQuest_score.text(questions.user_score);
     var newQuest_disc = $("<p>");
@@ -108,7 +106,6 @@ $(document).ready(function() {
     newQuestPanelBody.append(newQuest_a3);
     newQuestPanelBody.append(newQuest_a4);
     newQuestPanelBody.append(newQuest_a5);
-    newQuestPanelBody.append(newQuest_ca);
     newQuestPanelBody.append(newQuest_score);
     newQuestPanelBody.append(newQuest_disc);
 

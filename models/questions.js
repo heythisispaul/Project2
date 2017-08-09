@@ -47,10 +47,6 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false 
       },
-      correctAnswer: {
-        type: DataTypes.STRING,
-        allowNull: true
-      },
       user_score: {
         type: DataTypes.INTEGER,
         allowNull: false,
