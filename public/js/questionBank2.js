@@ -1,5 +1,5 @@
 
-var questionBank = [
+var questionBank2 = [
 
 	 {
 		question_text:"Most Populous Cities in the World",
@@ -8,9 +8,9 @@ var questionBank = [
 		choiceThree:"Shanghai - China",
 		choiceFour:"Mexico City - Mexico",
 		choiceFive:"Sao Paulo - Brazil",
-		number: 1,
+		// number: 1,
 		question_category: "Category 1",
-		correct_Answer: "",
+		correct_Answer: "choiceTwo",
 		disclaimer: ""
 	},
 	 {
@@ -20,9 +20,9 @@ var questionBank = [
 		choiceThree:"Connecticut",
 		choiceFour:"New Jersey",
 		choiceFive:"New Hampshire",
-		number: 2,
+		// number: 2,
 		question_category: "Category 1",
-		correct_Answer: "",
+		correct_Answer: "choiceFour",
 		disclaimer: ""
 	},
 
@@ -33,12 +33,12 @@ var questionBank = [
 		choiceThree:"France",
 		choiceFour:"Spain",
 		choiceFive:"Sweden",
-		number: 3,
+		// number: 3,
 		question_category: "Category 1",
-		correct_Answer: "",
+		correct_Answer: "choiceThree",
 		disclaimer: "",
 	}
 
 ];
 
-module.exports = questionBank;
+module.exports = questionBank2;

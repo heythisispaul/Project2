@@ -12,25 +12,25 @@ $(document).ready(function() {
     getQuestData(question_id);
   }
 
-  // Getting jQuery references to the post a1....a5, title, add form, and category select
+  // Getting jQuery references to the post a1....a5, title, add form, ca and category select
+  var titleInput = $("#title");
   var a1_Input = $("#a1");
   var a2_Input = $("#a2");
   var a3_Input = $("#a3");
   var a4_Input = $("#a4");
   var a5_Input = $("#a5");
-  var titleInput = $("#title");
   var ca_Input = $("#answer");
   var addForm = $("#add");
+  var disclaimer_Input = $("#cya");
   var questCategorySelect = $("#category");
   // Giving the questCategorySelect a default value
   questCategorySelect.val("Category 1");
+  // correctAnswer.val("Need Answer");
   // Adding an event listener for when the form is submitted
   $(addForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the question if we are missing a1...a5 or a title
-    if (!titleInput.val().trim() || !a1_Input.val().trim() || 
-      !a2_Input.val().trim() || !a3_Input.val().trim() || 
-      !a4_Input.val().trim() || !a5_Input.val().trim() || 
+    // Wont submit the question if we are missing a1...a5, ca or a title
+    if (!titleInput.val().trim() || !a1_Input.val().trim() || !a2_Input.val().trim() || !a3_Input.val().trim() || !a4_Input.val().trim() || !a5_Input.val().trim() || 
       !ca_Input.val().trim() || !questCategorySelect.val().trim()) {
       return;
     }
@@ -42,11 +42,12 @@ $(document).ready(function() {
       choiceThree: a3_Input.val().trim(),
       choiceFour: a4_Input.val().trim(), 
       choiceFive: a5_Input.val().trim(),
-      correct_Answer: ca_Input.val().trim(),
-      question_category: questCategorySelect.val()
+      correctAnswer: ca_Input.val(),
+      question_category: questCategorySelect.val(),
+      disclaimer: disclaimer_Input.val().trim()
     };
 
-    console.log(newQuest)
+    console.log(newQuest);
 
     // If we're updating a question run updateQuest to update a post
     // Otherwise run submitQuest to create a whole new question
@@ -55,14 +56,14 @@ $(document).ready(function() {
       updateQuest(newQuest);
     }
     else {
-      submitquest(newQuest);
+      submitQuest(newQuest);
     }
   });
 
   // Submits a new question and brings user to ?? page upon completion
   function submitQuest(Question) {
     $.post("/api/questions/", Question, function() {
-      window.location.href = "/blog";
+      window.location.href = "/allquestions";
     });
   }
 
@@ -71,14 +72,15 @@ $(document).ready(function() {
     $.get("/api/questions/" + id, function(data) {
       if (data) {
         // If this question exists, prefill our add form with its data
-        titleInput.val(data.title);
+        titleInput.val(data.question_text);
         a1_Input.val(data.choiceOne);
         a2_Input.val(data.choiceTwo);
         a3_Input.val(data.choiceThree);
         a4_Input.val(data.choiceFour);
         a5_Input.val(data.choiceFive);
-        ca_Input.val(data.correct_Answer);
+        ca_Input.val(data.correctAnswer);
         questCategorySelect.val(data.question_category);
+        disclaimer_Input.val(data.disclaimer);
         // If we have a question with this id, set a flag for us to know to update the question
         // when we hit submit
         updating = true;
@@ -91,10 +93,11 @@ $(document).ready(function() {
     $.ajax({
       method: "PUT",
       url: "/api/questions",
+      // data: questions
       data: question
     })
     .done(function() {
-      window.location.href = "/blog";
+      window.location.href = "/allquestions";
     });
   }
 });

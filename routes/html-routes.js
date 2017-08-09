@@ -32,6 +32,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/addQuestion.html"));
   });
 
+  // Route to show all question 
+  app.get("/allquestions", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/showQuestions.html"));
+  });
+
 
 
 };

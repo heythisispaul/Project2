@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Questions = sequelize.define("questions", {
+  var Questions = sequelize.define("Questions", {
 
       question_text: {
         type: DataTypes.STRING,
@@ -45,25 +45,22 @@ module.exports = function(sequelize, DataTypes) {
       },
       question_category: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1, 225]
-        }
+        allowNull: false 
       },
-      correct_Answer: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false, 
+      correctAnswer: {
+        type: DataTypes.STRING,
+        allowNull: true
       },
       user_score: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 0, 
+        defaultValue: 0 
       },
       disclaimer: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [1, 11]
+          len: [1, 225]
         }       
       }
 

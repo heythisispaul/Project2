@@ -8,6 +8,8 @@
 // Requiring our models
 var db = require("../models");
 
+var qBank = require("../public/js/questionBank2");
+
 // Routes
 // ============================================================= 
 module.exports = function(app) {
@@ -33,7 +35,7 @@ module.exports = function(app) {
       choiceFive: req.body.choiceFive,
       question_category: req.body.question_category,
       user_score: req.body.user_score,
-      disclaimer: reg.body.disclaimer
+      disclaimer: req.body.disclaimer
     }).then(function(dbQuestions) {
       res.json(dbQuestions);
     });
@@ -67,7 +69,7 @@ module.exports = function(app) {
       choiceFive: req.body.choiceFive,
       question_category: req.body.question_category,
       user_score: req.body.user_score,
-      disclaimer: reg.body.disclaimer
+      disclaimer: req.body.disclaimer
     }, {
       where: {
         id: req.body.id
