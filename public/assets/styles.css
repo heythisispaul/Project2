@@ -1,3 +1,14 @@
+body {
+	font-family: 'Merriweather', serif;
+	color: #fefefe;
+	background: #0e1111;
+	background-image: url("./imgs/headerBackground2.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+}
+
+
 button.submit {
   float: right;
 }
@@ -18,4 +29,48 @@ button.edit {
 
 .top-30 {
   margin-top: 30px;
+}
+
+/*index (main) page jumbotron*/ 
+.jumbotron {
+	background-image: url("./imgs/questionMarks.jpg");
+	background-color: #0e1111;
+	/*background-size: 100%;*/
+	text-shadow: 3px 3px #392077;
+	text-align: center;
+}
+
+b, strong {
+	font-size: 200%;
+	color: #FEFEFE;
+	/* purple (color picked from background) */
+	/*text-shadow: 3px 3px #572E94;*/
+	/* yellow (color picked from background) */
+	/*text-shadow: 3px 3px #E8CA5F;*/
+	/* pink */
+	text-shadow: 3px 3px #BF51A5;
+	
+}
+
+.panel-default>.panel-heading {
+	background-image: url("./imgs/questionMarks.jpg");
+	color: #fefefe;
+	text-shadow: 2px 2px #572E94;
+}
+
+.panel-body {
+	background: #0e1111;
+}
+
+.panel-default {
+	background-color: #0e1111;
+}
+
+.center-block {
+	border: 3px solid #3A2D83;
+	background-color: #0e1111;
+}
+
+.center-block:hover {
+	background-color: #3A2D83;
 }
