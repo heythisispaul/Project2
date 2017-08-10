@@ -47,11 +47,13 @@ b, strong {
 	/*text-shadow: 3px 3px #572E94;*/
 	/* yellow (color picked from background) */
 	/*text-shadow: 3px 3px #E8CA5F;*/
-	/* pink */
-	text-shadow: 3px 3px #BF51A5;
+	/* pink  #BF51A5  */
+	text-shadow: 3px 3px #8c3a79;
 	
 }
 
+.panel-primary,
+.panel-primary>.panel-heading,
 .panel-default>.panel-heading {
 	background-image: url("./imgs/questionMarks.jpg");
 	color: #fefefe;
@@ -66,7 +68,7 @@ b, strong {
 	background-color: #0e1111;
 }
 
-.center-block {
+.btn-primary, .center-block {
 	border: 3px solid #3A2D83;
 	background-color: #0e1111;
 }
@@ -74,3 +76,4 @@ b, strong {
 .center-block:hover {
 	background-color: #3A2D83;
 }
+
