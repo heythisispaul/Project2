@@ -1,4 +1,4 @@
-# Project2
+Battlefeud App
 
 <div class="panel panel-body">
                     <p> Before continuing to the main page, please read the simple rules and controls.</p>
