@@ -75,9 +75,9 @@ $(document).ready(function() {
       "10px"
     });
     var newQuestPanelBody = $("<div>");
-    newQuestPanelBody.addClass("panel-body");
+    newQuestPanelBody.addClass("panel-body text-center");
     newQuestPanelBody.css({
-      "font-size": "1.5em"
+      "font-size": "1.25em"
     })
     newQuestTitle.text(questions.question_text + " ");
 

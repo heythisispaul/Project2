@@ -39,7 +39,7 @@ db.sequelize.sync({ force: true }).then(function() {
   db.Questions.create({
   question_text: "Smallest United States by Land Mass",
   choiceOne: "Rhode Island",
-  choiceTwo: "Delware",
+  choiceTwo: "Delaware",
   choiceThree: "Connecticut",
   choiceFour: "New Jersey",
   choiceFive: "New Hampshire",
