@@ -1,4 +1,4 @@
-Battlefeud App
+<h1>Battlefeud App</h1>
 
 <div class="panel panel-body">
                     <p> Before continuing to the main page, please read the simple rules and controls.</p>
@@ -11,4 +11,6 @@ Battlefeud App
                         <li>The game was designed to play with Family Feud rules. If you need a refresher, please read up <a href="https://en.wikipedia.org/wiki/Family_Feud#Gameplay">here.</a></li>
                         <li>House Rules are more than welcome.</li>
                     </ul>
-                </div>
+                </div><br><br>
+                
+<p><a href="https://https://mysterious-cliffs-12088.herokuapp.com/">Click here to Play</a></p>                
