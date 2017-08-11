@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "10053VUa!",
+    "password": "niners#1",
     "database": "Questions_db",
     "host": "localhost",
     "dialect": "mysql"
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "pqqtwxrna6t0t3t8",
-    "password": "c0tdb1zy46ewqa5u",
-    "database": "Questions_db",
-    "host": "ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "a727e5m6pq40qvfn",
+    "password": "x3dc5g2ass7cy1w9",
+    "database": "kxcyqeweme845i66",
+    "host": "mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
