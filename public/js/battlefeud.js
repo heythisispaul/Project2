@@ -31,14 +31,14 @@ getAllQuests();
 // console.log(questionArr);
 
 function getQuestID(category) {
-    $.get("/api/questions/2", function(data) {
+    $.get("/api/questions/1", function(data) {
       // console.log("questions", data[0]);
 	  questions = data[0];
 	  console.log(questions);
 	  setQuestion(questions);
       });
   	}
-// getQuestID();  	
+getQuestID();  	
 
 	// Function that displays the question information on the main screen and sets everything to unanswered:
 	function setQuestion(questions) {
@@ -52,16 +52,6 @@ function getQuestID(category) {
 		$("#strikeDisplay").html("");
 		strikeCount = 0;
 	}
-
-	$("#submit").on("click", function() {
-		questID = 2;
-		$.get("/api/questions/" + questID, function(data) {
-		// console.log("questions", data[0]);
-		questions = data[0];
-		console.log(questions);
-		setQuestion(questions);
-		});
-	})
 
 
 			//displays a question on load:
@@ -77,13 +67,15 @@ function getQuestID(category) {
 				//Callback function that runs when a number is entered in the "Question Number" box and "Go" is pressed:
 				$("#submit").on("click", function() {
 					questID = $("#qNumber").val();
-					setQuestion(quest[selected - 1]);
+					console.log(questID);
+					setQuestion(questionArr[questID - 1]);
 				});
 
 				//Will also run if 'Enter' is pressed in the text box:
 				$('#qNumber').bind("enterKey",function(){
-					let selected = $("#qNumber").val();
-					setQuestion(quest[selected - 1]);
+					questID = $("#qNumber").val();
+					console.log(questID);
+					setQuestion(questionArr[questID - 1]);
 				});
 				$('#qNumber').keyup(function(e){
 					if(e.keyCode == 13) {

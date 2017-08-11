@@ -18,6 +18,7 @@ $(document).ready(function() {
     $.get("/api/questions/" + categoryString, function(data) {
       console.log("Questions", data);
       questions = data;
+      console.log(questions);
       if (!questions || !questions.length) {
         displayEmpty();
       }
@@ -75,8 +76,13 @@ $(document).ready(function() {
     });
     var newQuestPanelBody = $("<div>");
     newQuestPanelBody.addClass("panel-body");
+    newQuestPanelBody.css({
+      "font-size": "1.5em"
+    })
     newQuestTitle.text(questions.question_text + " ");
-    
+
+    var newQuest_id = $("<h3>");
+    newQuest_id.text(questions.id);
     var newQuest_a1 = $("<p>");
     newQuest_a1.text(questions.choiceOne);
     var newQuest_a2 = $("<p>");
@@ -91,6 +97,9 @@ $(document).ready(function() {
     newQuest_score.text(questions.user_score);
     var newQuest_disc = $("<p>");
     newQuest_disc.text(questions.disclaimer);
+    newQuest_disc.css({
+      "color": "grey"
+    });
     
     var formattedDate = new Date(questions.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
@@ -99,14 +108,15 @@ $(document).ready(function() {
     newQuestPanelHeading.append(deleteBtn);
     newQuestPanelHeading.append(editBtn);
     newQuestPanelHeading.append(newQuestTitle);
-    newQuestPanelHeading.append(newQuestCategory);
+    newQuestPanelHeading.append("<span><h3>Question #:</h3></span>");
+    newQuestPanelHeading.append(newQuest_id);
 
     newQuestPanelBody.append(newQuest_a1);
     newQuestPanelBody.append(newQuest_a2);
     newQuestPanelBody.append(newQuest_a3);
     newQuestPanelBody.append(newQuest_a4);
     newQuestPanelBody.append(newQuest_a5);
-    newQuestPanelBody.append(newQuest_score);
+    // newQuestPanelBody.append(newQuest_score);
     newQuestPanelBody.append(newQuest_disc);
 
     newQuestPanel.append(newQuestPanelHeading);
